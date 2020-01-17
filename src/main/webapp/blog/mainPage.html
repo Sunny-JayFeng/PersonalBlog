@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/mainPage.css">
+</head>
+<body>
+    
+    <div class="nav-wrapper">
+        <ul>
+            <li class="hover"><a href="/blog/mainPage.html">首页</a></li>
+            <li class="hover"><a href="/blog/book.html" target="_blank">书籍推荐</a></li>
+            <li class="hover"><a href="/author">我是作者</a></li>
+        </ul>
+        <div class="search-wrapper">
+            <input type="text" class="search" placeholder="输入关键词">
+            <span class="icon hover"></span>
+        </div>
+    </div>
+    
+
+    <div class="wrapper">
+        <div class="blog-wrapper">
+            <div class="hidden no-blog">
+                没有文章T.T
+            </div>
+            <div class="tpl content">
+                
+                <div class="content-top">
+                    <a class="hover blog-title" target="_blank"></a>
+                    <span class="hover author"></span>
+                </div>
+
+                <div class="content-mid">
+                    <div class="blog-content"></div>
+                </div>
+                
+                <div class="content-bottom">
+                    <span class="ctime"></span>
+                    <span class="tags">
+                        <ul class="blog-tags">
+                            <li>标签：</li>
+                        </ul>
+                    </span>
+                    <span class="read-total"></span>
+                    <span class="thumbs-total"></span>
+                </div>
+
+            </div>
+        </div>
+        <!-- 页码 -->
+        <div class="page-wrapper">
+            <ul class="page-index">
+                <li class="hover last">上一页</li>
+                <li class="hover next">下一页</li>
+            </ul>
+        </div>
+        <div class="other-wrapper">
+            <div class="tags-wrapper">
+                <ul>
+                    <li class="all-tags">所有标签</li>
+                </ul>
+            </div>
+            <div class="hot-blog-wrapper">
+                <ul>
+                    <li class="hover hot-blogs">热门文章</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="../js/mainPage.js"></script>
+</body>
+</html>

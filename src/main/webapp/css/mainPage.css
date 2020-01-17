@@ -1,0 +1,120 @@
+.wrapper {
+    position: absolute;
+    left: 50%;
+    width: 1200px;
+    margin-left: -600px;
+    top: 10%;
+    border-top: 1px solid rgba(160, 130, 255, 0.6);
+}
+.wrapper .blog-wrapper{
+    width: 900px;
+}
+.wrapper .blog-wrapper .no-blog{
+    text-indent: 2em;
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.wrapper .blog-wrapper .tpl,
+.hidden{
+    display: none;
+}
+.wrapper .blog-wrapper .content{
+    position: relative;
+    padding: 10px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    border-top: none;
+}
+.content .content-top{
+    margin-top: -5px;
+}
+.content .content-top .is-top{
+    color: rgba(255, 0, 0, 0.8);
+}
+.content .content-top .blog-title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content .content-top .author{
+    position: absolute;
+    font-size: 23px;
+    font-weight: bold;
+    top: 5%;
+    right: 2%;
+}
+.content .content-mid{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.content .content-mid .blog-content{
+    text-indent: 2em;
+    color: rgba(150, 120, 245, 0.9);
+}
+.content .content-bottom{
+    position: relative;
+    margin-left: -35px;
+}
+.tags{
+    position: absolute;
+    margin: 0px !important;
+    top: -4px;
+    right: -6px;
+}
+.tags ul li{
+    float: left;
+    line-height: 2em;
+}
+.tags ul .tag{
+    margin-right: 18px;
+}
+.content .content-bottom .tags ul .tag:hover{
+    font-size: 22px;
+}
+.content .content-bottom span{
+    margin: 35px;
+}
+
+.page-wrapper ul{
+    line-height: 2.5em;
+}
+.page-wrapper ul li{
+    /* border: 1px solid rgba(160, 130, 255, 0.6); */
+    margin: 5px;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.page-wrapper ul .index{
+    width: 2em;
+    text-align: center;
+}
+.page-wrapper ul .active{
+    color: rgba(255, 0, 0, 0.8);
+}
+
+.wrapper .other-wrapper{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    /* border: 1px solid rgba(160, 130, 255, 0.6); */
+}
+
+.tags-wrapper ul .all-tags,
+.hot-blog-wrapper ul .hot-blogs{
+    text-align: center;
+    line-height: 2em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.other-wrapper ul li{
+    text-align: center;
+    line-height: 2em;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    border-top: none;
+    font-size: 20px;
+}
+

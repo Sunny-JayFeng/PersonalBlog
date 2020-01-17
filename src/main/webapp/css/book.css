@@ -1,0 +1,41 @@
+.book-wrapper{
+    width: 1100px;
+    position: relative;
+    left: 50%;
+    margin-left: -550px;
+    padding: 20px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+.book-wrapper .tpl{
+    display: none;
+}
+.book-wrapper .book-content{
+    position: relative;
+    padding: 15px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+.book-wrapper .book-content .book-img{
+    width: 220px;
+    display: block;
+}
+
+.book-wrapper .book-content ul{
+    position: absolute;
+    left: 245px;
+    top: 11px;
+}
+.book-wrapper .book-content ul li{
+    margin-bottom: 15px;
+}
+.author{
+    font-size: 25px;
+    font-weight: bold;
+}
+.version{
+    font-size: 22px;
+}
+.recommend{
+    font-size: 18px;
+    text-indent: 2em;
+}

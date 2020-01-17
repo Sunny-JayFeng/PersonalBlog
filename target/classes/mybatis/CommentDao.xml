@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lrabbitmx.personalblog.dao.CommentDao">
+
+    <select id="selectTheCommentById" parameterType="int" resultType="Comment">
+        SELECT `id`, `user_name`, `user_email`, `content`, `ctime` FROM comment WHERE `id` = #{id}
+    </select>
+
+    <select id="selectTheCommentByUserName" parameterType="string" resultType="Comment">
+        SELECT `id`, `user_name`, `user_email`, `content`, `ctime` FROM comment WHERE `user_name` = #{userName}
+    </select>
+
+    <select id="selectCommentsId" parameterType="int" resultType="int">
+        SELECT `comment_id` FROM blog_comment_mapping WHERE `blog_id` = #{blogId}
+    </select>
+
+    <insert id="insertComment" parameterType="Comment" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO comment(`user_name`, `user_email`, `content`, `ctime`) VALUES(#{userName}, #{userEmail}, #{content}, #{ctime})
+    </insert>
+
+    <insert id="insertBlogCommentMapping" parameterType="int">
+        INSERT INTO blog_comment_mapping(`blog_id`, `comment_id`) VALUES(#{blogId}, #{commentId})
+    </insert>
+    
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM comment WHERE id = #{commentId};
+    </delete>
+
+    <delete id="deleteBlogComment" parameterType="int">
+        DELETE FROM blog_comment_mapping WHERE `comment_id` = #{commentId}
+    </delete>
+
+</mapper>

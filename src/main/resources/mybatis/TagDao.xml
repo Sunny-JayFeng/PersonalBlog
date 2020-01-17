@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lrabbitmx.personalblog.dao.TagDao">
+
+    <select id="selectTags" resultType="Tag">
+        SELECT `id`, `tag_name`, `ctime` FROM tag;
+    </select>
+
+    <select id="selectTagsId" parameterType="int" resultType="int">
+        SELECT `tag_id` FROM blog_tag_mapping WHERE `blog_id` = #{blogId}
+    </select>
+
+    <select id="selectFiveBlogsId" parameterType="int" resultType="int">
+        SELECT `blog_id` FROM blog_tag_mapping WHERE `tag_id` = #{tagId} LIMIT #{index}, 5
+    </select>
+
+    <select id="selectOneByTagName" parameterType="string" resultType="int">
+        SELECT `id`, `tag_name`, `ctime` FROM tag WHERE `tag_name` = #{tagName}
+    </select>
+
+    <select id="selectOneByTagId" parameterType="int" resultType="Tag">
+        SELECT `id`, `tag_name`, `ctime` FROM tag WHERE `id` = #{tagId}
+    </select>
+
+    <select id="tagBlogTotal" parameterType="int" resultType="int">
+        SELECT count(`blog_id`) FROM blog_tag_mapping WHERE `tag_id` = #{tagId}
+    </select>
+
+    <insert id="insertTag" parameterType="Tag">
+        INSERT tag(`tag_name`, `ctime`) VALUES(#{tagName}, #{ctime})
+    </insert>
+
+    <delete id="deleteTag" parameterType="int">
+        DELETE FROM tag WHERE `id` = #{tagId}
+    </delete>
+
+    <delete id="deleteBlogTag" parameterType="int">
+        DELETE FROM blog_tag_mapping WHERE `tag_id` = #{tagId}
+    </delete>
+
+</mapper>

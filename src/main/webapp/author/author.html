@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/author.css">
+</head>
+<body>
+    
+    <div class="hidden wrapper">
+        <!-- 添加/删除作者 -->
+        <div class="hidden operate-author-wrapper">
+            <input type="text" class="author-name" placeholder="用户名">
+            <input type="password" class="password" placeholder="密码">
+            <span class="operate hover author-operate"></span>
+        </div>
+
+        <!-- 添加/修改文章 -->
+        <div class="hidden operate-blog-wrapper">
+            <input type="text" class="hidden id" placeholder="文章id">
+            <input type="text" class="blog-title" placeholder="文章标题">
+            <input type="text" class="content-header" placeholder="文章开头">
+            <input type="text" class="blog-tag" placeholder="文章标签(标签之间用英文逗号分隔)">
+            <input type="text" class="is-top" placeholder="是否置顶0/1">
+            <span class="blog-html-file">选择博客html文件(必须有)：</span><input type="file" class="html-file">
+            <span class="blog-css-file">选择博客css文件(可无)：</span><input type="file" class="css-file">
+            <span class="operate hover blog-operate"></span>
+        </div>
+        <!-- 删除文章 -->
+        <div class="hidden delete-blog">
+            <input type="text" class="blog-id" placeholder="文章ID">
+            <span class="operate hover delete"></span>
+        </div>
+
+        <!-- 添加/删除标签 -->
+        <div class="hidden tag-wrapper">
+            <input type="text" class="tag-msg" placeholder="标签名字">
+            <span class="operate hover tag-operate"></span>
+        </div>
+
+        <!-- 删除评论 -->
+        <div class="hidden comment-wrapper">
+            <input type="text" class="comment-id" placeholder="评论id">
+            <span class="operate hover comment-delete"></span>
+        </div>
+
+        <!-- 添加/更新书籍 -->
+        <div class="hidden book-wrapper">
+            <input type="text" class="hidden book-id" placeholder="书籍id">
+            <input type="text" class="book-name" placeholder="书名">
+            <input type="text" class="author-name" placeholder="作者">
+            <input type="text" class="version" placeholder="版本">
+            <input type="text" class="recommend-reasons" placeholder="推荐语">
+            <span class="book-file">书籍图片(必须有)：</span><input type="file" class="book-img-file">
+            <span class="operate hover book-operate"></span>
+        </div>
+        <!-- 删除书籍 -->
+        <div class="hidden delete-book">
+            <input type="text" class="book-id" placeholder="书籍id">
+            <span class="operate hover delete-book-operate"></span>
+        </div>
+
+
+    </div>
+    
+    <div class="option">
+        <ul>
+            <li class="hover add-author">添加一个作者</li>
+            <li class="hover delete-author">删除一个作者</li>
+            <li class="hover add-blog">添加文章</li>
+            <li class="hover delete-the-blog">删除文章</li>
+            <li class="hover update-blog">更新文章</li>
+            <li class="hover add-tag">添加标签</li>
+            <li class="hover delete-tag">删除标签</li>
+            <li class="hover delete-comment">删除评论</li>
+            <li class="hover add-book">添加书籍</li>
+            <li class="hover delete-the-book">删除书籍</li>
+            <li class="hover update-book">更新书籍</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="../js/author.js"></script>
+</body>
+</html>

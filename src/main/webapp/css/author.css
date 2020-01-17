@@ -1,0 +1,131 @@
+.option ul{
+    position: absolute;
+    top: 17%;
+    left: 7%;
+    width: 200px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+.option ul li{
+    margin: 18px;
+    font-size: 25px;
+    text-align: center;
+}
+.option ul li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+
+.hidden{
+    display: none;
+}
+
+.wrapper{
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    left: 25%;
+    top: 8%;
+}
+
+input,span{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    border: none;
+    font-size: 25px;
+}
+input{
+    color: #000;
+}
+span{
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    text-align: center;
+}
+.password{
+    top: 60%;
+}
+.author-operate{
+    top: 70%;
+}
+.id,
+.book-id{
+    top: 30%;
+}
+.delete-book .book-id{
+    top: 50%;
+}
+.blog-title{
+    top: 40%;
+}
+.content-header{
+    top: 50%;
+}
+.is-top{
+    top: 60%;
+}
+.blog-tag{
+    top: 70%;
+    font-size: 18px;
+}
+.blog-html-file{
+    width: 320px;
+    top: 80%;
+    left: 24%;
+    border: none;
+}
+.html-file{
+    top: 80%;
+    color: #b9b9ff;
+}
+.blog-css-file{
+    top: 90%;
+    left: 26%;
+    border: none;
+}
+.css-file{
+    top: 90%;
+    color: #b9b9ff;
+}
+.blog-operate{
+    top: 100%;
+}
+.delete{
+    top: 58%;
+}
+.tag-operate,
+.comment-delete,
+.delete-book-operate{
+    top: 60%;
+}
+
+.book-name{
+    top: 40%;
+}
+.author-name{
+    top: 50%;
+}
+.version{
+    top: 60%;
+}
+.recommend-reasons{
+    top: 70%;
+}
+.book-img-file{
+    top: 80%;
+    color: #b9b9ff;
+}
+.book-file{
+    top: 80%;
+    left: 29%;
+    border: none;
+}
+.book-operate{
+    top: 90%;
+}

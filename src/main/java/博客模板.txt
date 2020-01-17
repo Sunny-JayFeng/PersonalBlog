@@ -1,0 +1,31 @@
+如果引入外部css文件，如：
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <link rel="stylesheet" href="../css/test.css">
+    </head>
+    <body>
+    </body>
+    </html>
+    必须在css文件链接标签上标上: <!-- css-link-start -->
+    在标签下标上：<!-- css-link-end -->
+    即
+        <!-- css-link-start -->
+        <link rel="stylesheet" href="../css/test.css">
+        <!-- css-link-end -->
+
+    注意：一篇文章只能由一个html文件和零个或一个css文件组成
+
+对于博客内容，必须在标签body标签的开头和结尾标上开始和结为，即
+    <body>
+        <!-- blog-start -->
+            博客内容....
+            .....
+            .....
+            .....
+        <!-- blog-end -->
+    </body>

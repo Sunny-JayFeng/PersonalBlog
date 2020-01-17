@@ -1,0 +1,89 @@
+.write-comment{
+    position: fixed;
+    top: 25%;
+    left: 30px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+.write-comment textarea{
+    padding: 10px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    resize: none;
+}
+.write-comment textarea:focus{
+    outline: none;
+}
+.write-comment .top-msg{
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.write-comment .user-msg input{
+    display: inline-block;
+    width: 110px;
+    font-size: 20px;
+    color: #000;
+    margin-left: 10px;
+    height: 16px;
+    padding: 5px;
+}
+.write-comment .submit{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 250px;
+}
+.write-comment .submit:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+
+.blog-wrapper{
+    width: 1100px;
+    position: relative;
+    left: 50%;
+    margin-left: -550px;
+    padding: 20px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+.test-img{
+    width: 800px;
+}
+
+.tpl{
+    display: none;
+}
+
+.comment-wrapper .comment-board{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.comment-wrapper{
+    width: 1100px;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    margin-left: -550px;
+    padding: 20px;
+    border: 1px solid rgba(160, 130, 255, 0.6);
+}
+
+.comment-wrapper .comment{
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    padding: 10px;
+    margin: 20px;
+}
+.comment-wrapper .comment span{
+    border: 1px solid rgba(160, 130, 255, 0.6);
+    margin-right: 50px;
+    display: inline-block;
+    padding: 10px;
+}
+.comment-wrapper .comment div{
+    margin-top: 10px;
+    text-indent: 2em;
+}

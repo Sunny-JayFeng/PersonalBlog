@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+	   http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <context:component-scan base-package="com.lrabbitmx.personalblog"></context:component-scan>
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <!--  加载数据库的配置文件  -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:config/jdbc.properties"/>
+    <!--  创建数据库连接池  -->
+    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <!--  依赖注入  -->
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+
+        <property name="acquireIncrement" value="5"/>
+        <property name="initialPoolSize" value="15"/>
+        <property name="minPoolSize" value="5"/>
+        <property name="maxPoolSize" value="30"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="datasource"/>
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+            </bean>
+        </property>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:mybatis/BlogDao.xml</value>
+                <value>classpath*:mybatis/CommentDao.xml</value>
+                <value>classpath*:mybatis/TagDao.xml</value>
+                <value>classpath*:mybatis/AuthorDao.xml</value>
+                <value>classpath*:mybatis/BookDao.xml</value>
+            </list>
+        </property>
+        <property name="typeAliases">
+            <array>
+                <value>com.lrabbitmx.personalblog.domain.Comment</value>
+                <value>com.lrabbitmx.personalblog.domain.Tag</value>
+                <value>com.lrabbitmx.personalblog.domain.Author</value>
+                <value>com.lrabbitmx.personalblog.domain.Blog</value>
+                <value>com.lrabbitmx.personalblog.domain.Book</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.lrabbitmx.personalblog.dao"/>
+    </bean>
+
+    <!--  配置定时器  -->
+    <context:component-scan base-package="com.lrabbitmx.personalblog"/>
+    <task:annotation-driven/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="1024000000"/>
+    </bean>
+
+</beans>
