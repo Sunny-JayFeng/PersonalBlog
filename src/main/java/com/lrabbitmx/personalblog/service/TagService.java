@@ -4,6 +4,7 @@ import com.lrabbitmx.personalblog.dao.TagDao;
 import com.lrabbitmx.personalblog.domain.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,12 +34,14 @@ public class TagService {
         return tagDao.tagBlogTotal(tagId);
     }
 
+    @Transactional
     public String addTag(Tag tag) {
         if(tagDao.selectOneByTagName(tag.getTagName()) != null) return "FAIL";
         tagDao.insertTag(tag);
         return "SUCCESS";
     }
 
+    @Transactional
     public String deleteTag(int tagId) {
         tagDao.deleteTag(tagId);
         tagDao.deleteBlogTag(tagId);

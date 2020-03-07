@@ -4,6 +4,7 @@ import com.lrabbitmx.personalblog.dao.BlogDao;
 import com.lrabbitmx.personalblog.domain.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -46,6 +47,7 @@ public class BlogService {
         return blogDao.searchBlogs(keyWord);
     }
 
+    @Transactional
     public String addBlog(Blog blog, Integer authorId, List<Integer> tagsId) {
         if(blogDao.selectOneByTitle(blog.getBlogTitle()) != null) return "FAIL";
         blogDao.insertBlog(blog);
@@ -57,6 +59,7 @@ public class BlogService {
         return "SUCCESS";
     }
 
+    @Transactional
     public String deleteBlog(int blogId) {
         blogDao.deleteBlog(blogId);
         blogDao.deleteBlogAuthor(blogId);

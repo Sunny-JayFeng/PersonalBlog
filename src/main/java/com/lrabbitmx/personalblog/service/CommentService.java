@@ -5,6 +5,7 @@ import com.lrabbitmx.personalblog.domain.Comment;
 import com.lrabbitmx.personalblog.util.BufferMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class CommentService {
         return commentDao.selectCommentsId(blogId);
     }
 
+    @Transactional
     public String writeComment(Comment comment, int blogId) {
         if(commentDao.selectTheCommentByUserName(comment.getUserName()) != null) return "FAIL THIS userName is already exists";
         commentDao.insertComment(comment);
@@ -32,12 +34,14 @@ public class CommentService {
         return "SUCCESS";
     }
 
+    @Transactional
     public void deleteComments(List<Integer> commentIdList) {
         for(int commentId : commentIdList) {
             commentDao.deleteComment(commentId);
         }
     }
 
+    @Transactional
     public String deleteComment(int commentId) {
         commentDao.deleteComment(commentId);
         commentDao.deleteBlogComment(commentId);

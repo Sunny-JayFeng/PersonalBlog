@@ -4,6 +4,7 @@ import com.lrabbitmx.personalblog.dao.AuthorDao;
 import com.lrabbitmx.personalblog.domain.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class AuthorService {
         return "SUCCESS?id=" + author.getId();
     }
 
+    @Transactional
     public String addAuthor(Author author) {
         if(authorDao.selectOne(author.getAuthorName()) != null) return "FAIL";
         authorDao.insertAuthor(author);
@@ -43,6 +45,7 @@ public class AuthorService {
         return author.getId();
     }
 
+    @Transactional
     public String deleteAuthor(int authorId) {
         System.out.println(authorId);
         authorDao.deleteAuthor(authorId);

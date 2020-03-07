@@ -4,6 +4,7 @@ import com.lrabbitmx.personalblog.dao.BookDao;
 import com.lrabbitmx.personalblog.domain.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class BookService {
         return bookDao.selectById(bookId);
     }
 
+    @Transactional
     public String addBook(Book book) {
         if(bookDao.selectOne(book.getBookName(), book.getAuthorName(), book.getVersion()) != null) return "FAIL";
         bookDao.addBook(book);
@@ -34,7 +36,6 @@ public class BookService {
 
     public String updateBook(Book book) {
         if(book == null) return "FAIL";
-        System.out.println(book);
         bookDao.updateBook(book);
         return "SUCCESS";
     }
